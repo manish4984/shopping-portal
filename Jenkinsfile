@@ -27,6 +27,12 @@ pipeline{
                 sh 'npm run package'
             }
         }
+        stage('Archive'){
+            steps{
+                echo 'this is the archive job for lagairogo-shopping-portal'
+                archiveArtifacts '**/distribution/*.zip'
+            }
+        }
     }
     
     post{
